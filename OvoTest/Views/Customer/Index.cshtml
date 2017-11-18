@@ -1,6 +1,13 @@
-﻿
+﻿@model  OvoTest.Models.CustomerViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "OVO Customers";
 }
 
 <h2>OVO Customers</h2>
+@foreach(var customer in Model.Customers)
+{
+    <div id="customer">
+        <img src="~/Images/head.jpg" />
+        @Html.ActionLink(customer.id.ToString(), "CustomerDetails");
+    </div>
+}

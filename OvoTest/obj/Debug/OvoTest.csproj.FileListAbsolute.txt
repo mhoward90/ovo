@@ -38,3 +38,4 @@ C:\Git\ovo\OvoTest\bin\Newtonsoft.Json.xml
 C:\Git\ovo\OvoTest\obj\Debug\OvoTest.csprojResolveAssemblyReference.cache
 C:\Git\ovo\OvoTest\obj\Debug\OvoTest.dll
 C:\Git\ovo\OvoTest\obj\Debug\OvoTest.pdb
+C:\Git\ovo\OvoTest\bin\RestSharp.dll

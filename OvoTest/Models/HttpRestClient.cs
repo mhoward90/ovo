@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using RestSharp;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace OvoTest.Models
 {
@@ -25,16 +26,13 @@ namespace OvoTest.Models
 
         public T DeserialiseJson<T>(string result)
         {
-            JsonTextReader reader = new JsonTextReader(new StringReader(result));
-            return serialiser.Deserialize<T>(reader);
+            return JsonConvert.DeserializeObject<T>(result);
         }
 
         public IEnumerable<T> DeserialiseJsonList<T>(string result)
         {
-            JsonTextReader reader = new JsonTextReader(new StringReader(result));
-            IList<T> list = new List<T>();
-            list.Add(serialiser.Deserialize<T>(reader));
-            return list;
+            JObject jo = JObject.Parse(result);
+            return jo.SelectToken("customers", false).ToObject<T[]>();
         }
 
         public string GetJsonData(string endpoint)
