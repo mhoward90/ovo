@@ -27,7 +27,7 @@ namespace OvoTest.Models
 
         Customer ICustomerRepository.GetCustomerById(Guid id)
         {
-            var result = client.GetJsonData($"customer/{id}");
+            var result = client.GetJsonData($"customer?id={id}");
             return client.DeserialiseJson<Customer>(result);
         }
     }

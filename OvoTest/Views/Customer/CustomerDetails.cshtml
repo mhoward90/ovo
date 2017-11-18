@@ -1,0 +1,22 @@
+﻿@model OvoTest.Models.CustomerViewModel
+
+@{
+    ViewBag.Title = "CustomerDetails";
+}
+
+<h2>OVO Customer Details</h2>
+
+<div id="back" class="btn-link">
+    @Html.ActionLink("Back to Customer List", "Index")
+</div>
+
+<h3>ID:</h3>
+<h5>@Model.CustomerDetails.id</h5>
+<h3>First Name:</h3>
+<h5>@Model.CustomerDetails.firstName</h5>
+<h3>Last Name:</h3>
+<h5>@Model.CustomerDetails.lastName</h5>
+<h3>Gender:</h3>
+<h5>@Model.CustomerDetails.gender</h5>
+<h3>Title:</h3>
+<h5>@Model.CustomerDetails.title</h5>

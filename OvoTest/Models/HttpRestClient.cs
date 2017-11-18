@@ -26,7 +26,8 @@ namespace OvoTest.Models
 
         public T DeserialiseJson<T>(string result)
         {
-            return JsonConvert.DeserializeObject<T>(result);
+            JObject jo = JObject.Parse(result);
+            return jo.SelectToken("customer", false).ToObject<T>();
         }
 
         public IEnumerable<T> DeserialiseJsonList<T>(string result)

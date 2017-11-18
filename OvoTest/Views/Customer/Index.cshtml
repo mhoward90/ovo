@@ -7,7 +7,7 @@
 @foreach(var customer in Model.Customers)
 {
     <div id="customer">
-        <img src="~/Images/head.jpg" />
-        @Html.ActionLink(customer.id.ToString(), "CustomerDetails");
+        <img src="~/Images/head.jpg"/>
+        @Html.ActionLink(customer.id.ToString(), "CustomerDetails", new { id = customer.id})
     </div>
 }
