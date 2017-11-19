@@ -13,22 +13,38 @@ namespace OvoTest.Controllers
             customerRepository = new CustomerRepository();
         }
 
-        public ActionResult Index()
+        public ActionResult Customers()
         {
             var viewModel = new CustomerViewModel();
-            var customers = customerRepository.GetAllCustomers();
-
-            viewModel.Customers = customers;
+            try
+            {
+                var customers = customerRepository.GetAllCustomers();
+                viewModel.Customers = customers;
+            }
+            catch(Exception exception)
+            {
+                return View(exception);
+            }
 
             return View(viewModel);
         }
 
         public ActionResult CustomerDetails(Guid id)
         {
-            var viewModel = new CustomerViewModel();
-            var customer = customerRepository.GetCustomerById(id);
+            if (id == null)
+                throw new Exception("Customer ID cannot be null");
 
-            viewModel.CustomerDetails = customer;
+            var viewModel = new CustomerViewModel();
+
+            try
+            {
+                var customer = customerRepository.GetCustomerById(id);
+                viewModel.CustomerDetails = customer;
+            }
+            catch(Exception exception)
+            {
+                return View(exception);
+            }
 
             return View(viewModel);
         }

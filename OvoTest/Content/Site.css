@@ -22,3 +22,5 @@ select,
 textarea {
     max-width: 280px;
 }
+
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");

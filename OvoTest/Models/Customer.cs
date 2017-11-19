@@ -11,6 +11,7 @@ namespace OvoTest.Models
         string lastName { get; set; }
         string gender { get; set; }
         string title { get; set; }
+        string titleAndFullName { get; }
     }
 
     public class Customer : ICustomer
@@ -25,5 +26,7 @@ namespace OvoTest.Models
         public string gender { get; set; }
         [JsonProperty("title")]
         public string title { get; set; }
+
+        public string titleAndFullName => title +" "+ firstName +" "+ lastName;
     }
 }

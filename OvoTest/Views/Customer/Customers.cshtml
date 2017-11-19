@@ -8,6 +8,6 @@
 {
     <div id="customer">
         <img src="~/Images/head.jpg"/>
-        @Html.ActionLink(customer.id.ToString(), "CustomerDetails", new { id = customer.id})
+        @Html.ActionLink(customer.titleAndFullName, "CustomerDetails", new { id = customer.id})
     </div>
 }
