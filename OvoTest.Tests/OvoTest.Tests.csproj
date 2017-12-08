@@ -82,8 +82,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerControllerTests.cs" />
+    <Compile Include="Controllers\CustomerRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\CustomerControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
